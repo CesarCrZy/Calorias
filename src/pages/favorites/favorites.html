@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+      <ion-title>Comidas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5>Mis comidas</h5>
+  <p>
+      Agrega tus comidas el dia
+  </p>
+  <ion-list>
+      <ion-item>
+          <ion-card color="gray" padding *ngFor="let favorite of favoritesList$ | async">
+            <div style="display: inline-block;">
+                <div class="card-title">Nombre: {{favorite.nombre}}</div>
+                <div class="card-subtitle">Calorias: {{favorite.calorias}}</div>
+            </div>  
+          </ion-card>
+      </ion-item>
+  </ion-list>
+  <ion-fab bottom right >
+        <button ion-fab mini (click)="OnNew()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  
+</ion-content>
