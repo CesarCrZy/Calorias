@@ -1,14 +1,14 @@
 import { Comida } from './models/favorite';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs';
-import { FAVORITES } from './data/data-favorites';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { UserInfoBD } from '../models/userinfo';
 
 @Injectable()
 export class FavoritesService {
 
-	private comidaslist = this.db.list<Comida>('Comidas');
+	private usuarioslist = this.db.list<UserInfoBD>('Usuarios');
+	private comidaslist = this.db.list<Comida>('Usuarios/Comidas');
 
 	constructor(http: Http, private db: AngularFireDatabase) {
 	
@@ -29,5 +29,9 @@ export class FavoritesService {
 
 	AddFavoriteAF(restaurant: Comida) {
 		return this.comidaslist.push(restaurant);
+	}
+
+	AddFavoriteUR(user: UserInfoBD) {
+		return this.usuarioslist.push(user);
 	}
 }

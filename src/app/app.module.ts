@@ -11,6 +11,7 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { FavoritesModalPage } from '../pages/favorites/favorites-modal/favorites-modal';
 import { Config } from '../app/firebase.config';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -20,7 +21,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { FavoritesService } from './../pages/favorites/favorites.service';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { BienvenidaPage } from '../pages/bienvenida/bienvenida';
+import { RegisterInfoPage } from '../pages/register-info/register-info';
+import { RecomendacionPage } from '../pages/recomendacion/recomendacion';
 
 @NgModule({
   declarations: [
@@ -29,12 +34,18 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     FavoritesPage,
     FavoritesModalPage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    RegisterPage,
+    BienvenidaPage,
+    RegisterInfoPage,
+    RecomendacionPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(Config),
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
     IonicStorageModule.forRoot(),
     HttpModule
@@ -46,7 +57,12 @@ import { HttpClientModule } from '@angular/common/http';
     FavoritesPage,
     FavoritesModalPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    RegisterPage,
+    BienvenidaPage,
+    RegisterInfoPage,
+    RecomendacionPage
   ],
   providers: [
     StatusBar,

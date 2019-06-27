@@ -1,0 +1,51 @@
+<!--
+  Generated template for the RegisterInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Datos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Genero</ion-label>
+        <ion-select name="userInfo.genero" [(ngModel)]="itemSelected" (ionChange)="getGenero(itemSelected.text)">
+          <ion-option *ngFor="let v of genero" [value]="v">{{v.text}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Edad</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.edad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Altura</ion-label>
+      <ion-input type="number" [(ngModel)]="userInfo.altura"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Peso</ion-label>
+      <ion-input type="number" [(ngModel)]="userInfo.peso"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Tu objetivo de entrenamiento</ion-label>
+        <ion-select name="userInfo.objetivo" [(ngModel)]="objSelected" (ionChange)="getObjetivo(objSelected.text)">
+          <ion-option *ngFor="let o of objetivo" [value]="o">{{o.text}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Nivel de Actividad</ion-label>
+        <ion-select name="userInfo.actividad" [(ngModel)]="actividadSelected" (ionChange)="getActividad(actividadSelected.text)">
+          <ion-option *ngFor="let a of actividad" [value]="a">{{a.text}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="Insertar(userInfo)">Siguiente</button>
+    </ion-item>
+
+</ion-content>
